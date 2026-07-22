@@ -19,9 +19,32 @@
         app:tabMode="fixed"
         app:tabGravity="fill"/>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+    <!-- Envolvemos el ViewPager en un RelativeLayout para permitir que el botón flote sobre él -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Botón flotante del Sensor (Esquina Superior Derecha) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_sensor_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="#4CAF50"
+            app:tint="@android:color/white"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+        <!-- Puse el icono 'ic_popup_sync' por defecto, pero puedes cambiar el srcCompat por tu propio icono -->
+
+    </RelativeLayout>
 
 </LinearLayout>
